@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRoute - Eco Friendly Route Planner</title>
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="#" class="logo">🌿 EcoRoute</a>
+    <nav>
+        <a href="#planner">Planner</a>
+        <a href="#how">How it works</a>
+        <a href="#about">About</a>
+    </nav>
+    <span class="status">Sustainable Travel</span>
+</header>
+
+<section class="hero">
+    <div>
+        <p class="eyebrow">TRAVEL SMARTER. TRAVEL GREENER.</p>
+        <h1>Every journey<br><span>leaves a footprint.</span></h1>
+        <p class="hero-text">
+            Compare travel options based on distance, fuel consumption,
+            travel time and estimated carbon emissions.
+        </p>
+        <a href="#planner" class="hero-button">Plan your journey →</a>
+    </div>
+
+    <div class="hero-card">
+        <span class="hero-symbol">↗</span>
+        <p>THE FUTURE OF TRAVEL</p>
+        <h2>Less impact.<br><span>More awareness.</span></h2>
+        <hr>
+        <small>Make every journey count.</small>
+    </div>
+</section>
+
+<main>
+<section class="planner-section" id="planner">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">YOUR JOURNEY STARTS HERE</p>
+            <h2>Plan your route</h2>
+        </div>
+        <p>Enter your locations to compare<br>the environmental impact of travel.</p>
+    </div>
+
+    <div class="planner-grid">
+
+        <div class="input-panel">
+            <h3>Where are you going?</h3>
+            <p class="muted">Enter your starting point and destination.</p>
+
+            <form id="route-form">
+                <label for="origin">STARTING POINT</label>
+                <input id="origin" type="text"
+                    placeholder="e.g. Lovely Professional University" required>
+
+                <div class="connector"></div>
+
+                <label for="destination">DESTINATION</label>
+                <input id="destination" type="text"
+                    placeholder="e.g. Jalandhar City Railway Station" required>
+
+                <button type="submit" id="compare-btn">
+                    Compare Travel Options →
+                </button>
+            </form>
+
+            <div class="sample">
+                <span>Try a sample route</span>
+                <button type="button" id="sample-btn">
+                    LPU → Jalandhar City
+                </button>
+            </div>
+
+            <p class="note">
+                An active internet connection is required for maps and route searches.
+            </p>
+        </div>
+
+        <div class="map-panel">
+            <div class="map-heading">
+                <strong>ROUTE PREVIEW</strong>
+                <span id="map-status">Map loading...</span>
+            </div>
+
+            <div id="map"></div>
+
+            <div class="map-legend">
+                <span>🟢 Starting point</span>
+                <span>🔴 Destination</span>
+                <span>━ Route</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="error-message" role="alert"></div>
+
+</section>
+
+<section class="results-section" id="results" hidden>
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">YOUR JOURNEY ANALYSIS</p>
+            <h2>Travel comparison</h2>
+        </div>
+        <p id="route-summary"></p>
+    </div>
+
+    <div class="recommendation" id="best-option"></div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>TRAVEL OPTION</th>
+                    <th>DISTANCE</th>
+                    <th>TRAVEL TIME</th>
+                    <th>FUEL / ENERGY</th>
+                    <th>CO₂ EMISSIONS</th>
+                </tr>
+            </thead>
+            <tbody id="comparison-body"></tbody>
+        </table>
+    </div>
+
+    <p class="disclaimer" id="estimate-note"></p>
+
+    <div class="impact-card">
+        <div>
+            <p class="eyebrow">ENVIRONMENTAL IMPACT</p>
+            <h3 id="impact-title">Make a greener choice.</h3>
+            <p id="impact-copy"></p>
+        </div>
+        <div class="saving">
+            <strong id="saved-amount">0.00</strong>
+            <span>kg CO₂ potentially avoided</span>
+        </div>
+    </div>
+
+</section>
+
+<section class="how-section" id="how">
+    <p class="eyebrow">SIMPLE. SMART. SUSTAINABLE.</p>
+    <h2>How EcoRoute works</h2>
+
+    <div class="steps">
+        <article>
+            <span>01</span>
+            <h3>Enter locations</h3>
+            <p>Enter your starting location and destination.</p>
+        </article>
+        <article>
+            <span>02</span>
+            <h3>Compare travel</h3>
+            <p>Compare distance, time, fuel and carbon emissions.</p>
+        </article>
+        <article>
+            <span>03</span>
+            <h3>Choose sustainably</h3>
+            <p>Find a practical travel option with lower estimated emissions.</p>
+        </article>
+    </div>
+</section>
+
+<section class="about-section" id="about">
+    <div>
+        <p class="eyebrow">ABOUT ECOROUTE</p>
+        <h2>Better journeys begin<br>with better information.</h2>
+    </div>
+    <p>
+        EcoRoute is an educational eco-friendly route planner that helps
+        people understand the environmental impact of everyday transport.
+        It compares travel modes and estimates their carbon emissions to
+        encourage more sustainable transportation choices.
+    </p>
+</section>
+</main>
+
+<footer>
+    <a href="#" class="logo">🌿 EcoRoute</a>
+    <span>Plan thoughtfully. Move responsibly.</span>
+    <span>College Project · 2026</span>
+</footer>
+
+<!-- Load Leaflet before the project JavaScript -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
